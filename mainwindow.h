@@ -17,13 +17,12 @@ public:
     ~MainWindow();
 
 public slots:
-    void ReceiveTime(int time);
+    void ReceiveTime(QString time_str);
+    void ReceiveLapData(QString time_str);
 
 private:
     Ui::MainWindow *ui;
     Stopwatch *sw;
-    int h, m, s, ms, laps, lap_time;
-    QString m_s, s_s;
 
 signals:
     void send_start_stop();

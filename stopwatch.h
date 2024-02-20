@@ -23,10 +23,11 @@ public:
 
 public slots:
     void SendStartStop();
+    void SendLap();
 
 private:
-    //int h, m, s, ms, laps, total_sec, last_lap;
-    //QString m_s, s_s;
+    int h, m, s, ms, laps, lap_time;
+    QString m_s, s_s, timer_str, lap_str;
     int ticks;
     bool start_stop;
     QTimer *timer;
@@ -36,8 +37,11 @@ private slots:
 
 signals:
     void sig_start_stop();
-    void sig_SendTime(int);
+    void sig_SendTime(QString);
+    void sig_Lap(QString);
+    void sig_Clear();
 
 };
 
 #endif // STOPWATCH_H
+
